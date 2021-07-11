@@ -1,0 +1,27 @@
+﻿@model Dropdownlist.Models.Address
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    @section scripts{
+        <script src="/assets/js/controller/addressController.js"></script>
+    }
+    </br>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProvinceID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("ProvinceID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlProvince" })
+            @Html.ValidationMessageFor(model => model.ProvinceID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DistrictID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("DistrictID", new SelectList(new string[] { }), new { @class = "form-control", @id = "ddlDistrict" })
+            @Html.ValidationMessageFor(model => model.DistrictID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
